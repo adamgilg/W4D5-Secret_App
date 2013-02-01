@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
-    if @user.password = @user.password_confirmation
-      @user.save!
+    if @user.save
+      redirect_to root_url
     else
-      flash.notice "Password doesn't match.  Try again, yo."
+      render 'new'
     end
-    flash.notice "Welcome to the system, #{@user.name}"
-    redirect_to root_url
   end
 
   def new

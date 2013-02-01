@@ -2,14 +2,15 @@
 
 <%= form_for @user do |f| %>
   <ul>
-    <li><%= f.label :name, "User Name:" %></li>
-    <li><%= f.text_field :name %></li>
-    <li><%= f.label :email, "Email:" %></li>
-    <li><%= f.text_field :email %></li>
-    <li><%= f.label :password, "Password:" %></li>
-    <li><%= f.text_field :password %></li>
-    <li><%= f.label :password_confirmation, "Confirm Password:" %></li>
-    <li><%= f.text_field :password_confirmation %></li>
+    <%= @user.errors.full_messages.join %>
+    <%= f.label :name, "User Name:" %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :email, "Email:" %><br>
+    <%= f.text_field :email %><br>
+    <%= f.label :password, "Password:" %><br>
+    <%= f.password_field :password %><br>
+    <%= f.label :password_confirmation, "Confirm Password:" %><br>
+    <%= f.password_field :password_confirmation %><br>
     <%= f.submit "SUBMIT TO ME!!!" %>
 <% end %>
   </ul>
