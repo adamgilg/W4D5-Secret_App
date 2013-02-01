@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     else
       flash.notice "Password doesn't match.  Try again, yo."
     end
+    flash.notice "Welcome to the system, #{@user.name}"
     redirect_to root_url
   end
 
