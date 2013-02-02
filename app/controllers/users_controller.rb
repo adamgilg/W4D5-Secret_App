@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :current_user, :except => [:new, :create]
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -15,4 +17,5 @@ class UsersController < ApplicationController
   def index
 
   end
+
 end

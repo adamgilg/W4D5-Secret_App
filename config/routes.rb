@@ -1,7 +1,7 @@
 SecretShareApp::Application.routes.draw do
-  resources :login
+  resource :sessions
   resources :users
-
+  resources :secrets
   root to: 'dashboard#index'
 
 end
