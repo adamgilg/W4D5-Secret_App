@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       flash.notice = "Invalid Login"
-      render new_session_path
+      render new_sessions_path
     end
   end
 
@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:session_token] = nil
-    redirect_to root_url
+    redirect_to new_sessions_path
   end
 end

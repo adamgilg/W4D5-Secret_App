@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_url
+      UserMailer.welcome_email(@user).deliver
+      redirect_to secrets_path
     else
       render 'new'
     end

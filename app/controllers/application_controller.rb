@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
       p @current_user
       @current_user = User.find_by_session_token(session[:session_token])
     else
-      redirect_to new_session_path
+      redirect_to new_sessions_path
     end
   end
 

@@ -1,4 +1,10 @@
 <h1>Welcome</h1>
 
 Welcome <%= @current_user.name %>
+<br>
+
+<%= link_to "ALL THE SECRETS", secrets_path %>
+<br>
+
+<%= link_to "Create Secret", new_secret_path %>
 
